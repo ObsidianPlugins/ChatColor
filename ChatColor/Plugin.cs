@@ -30,7 +30,7 @@ namespace ChatColor
 
             if (FileWriter.IsUsable)
             {
-                string path = Path.Combine("ChatColor", "config.json");
+                string path = Path.Combine(Globals.WorkingDirectory, "config.json");
                 if (!FileWriter.FileExists(path))
                 {
                     await FileWriter.WriteAllTextAsync(path, JsonConvert.SerializeObject(new Config(), Formatting.Indented));
